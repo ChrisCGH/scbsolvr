@@ -1,0 +1,4 @@
+# Build artifacts
+newsrc/*.o
+newsrc/mono
+newsrc/scbsolvr
