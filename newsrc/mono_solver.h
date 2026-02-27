@@ -212,7 +212,6 @@ class Mono_Solver
             if (terminate_)
             {
                delete [] outtext;
-               clear();
                return 0;
             }
             if (top == top1)
