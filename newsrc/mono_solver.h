@@ -146,6 +146,7 @@ class Mono_Solver
                            long int secs = time(0) - start_time;
                            long int mins = secs / 60;
                            secs -= 60 * mins;
+                           score_ = best_local_max_score;
                            if (verbose_)
                            {
                               std::cout << scorer_.get_scored_count() << " alphabets in ";
@@ -153,7 +154,6 @@ class Mono_Solver
                               mono_.display();
                               std::cout << "Score = " << best_local_max_score << std::endl;
                               std::cout << outtext << std::endl;
-                              score_ = best_local_max_score;
                            }
                            if (solver_callback_)
                            {
@@ -212,7 +212,6 @@ class Mono_Solver
             if (terminate_)
             {
                delete [] outtext;
-               clear();
                return 0;
             }
             if (top == top1)
@@ -362,7 +361,7 @@ class Mono_Solver
             }
             c++;
          }
-         if (total == 0) return 0.0;
+         if (total <= 1) return 0.0;
          double phi_value = 0.0;
          for (i = 0; i < 26; i++)
          {
