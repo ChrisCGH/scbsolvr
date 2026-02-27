@@ -447,13 +447,14 @@ void MainWindow::process_result(const Mono_Solver& solver)
 
     pthread_mutex_lock(&update_mutex_);
     bool need_idle = !update_pending_;
-    if (plain != pending_plaintext_ || new_keys - pending_keys_checked_ > 100000)
+    bool plain_changed = (plain != pending_plaintext_);
+    if (plain_changed || new_keys - pending_keys_checked_ > 100000)
     {
+        count_only_update_    = !plain_changed;
         pending_plaintext_    = plain;
         pending_key_          = solver.best_key(0);
         pending_keys_checked_ = new_keys;
         pending_score_        = solver.score();
-        count_only_update_    = (plain == pending_plaintext_);
         if (need_idle)
         {
             update_pending_ = true;
@@ -575,7 +576,7 @@ void MainWindow::on_solve(GtkWidget*, gpointer data)
         self->solver_.set_fixed(nullptr);
     }
 
-    self->solver_.set_verbose();
+    self->solver_.set_quiet();
     self->solver_.set_solver_callback(self);
 
     pthread_create(&self->solver_thread_, nullptr, solver_thread_func, &self->solver_);
