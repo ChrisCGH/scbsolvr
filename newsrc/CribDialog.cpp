@@ -163,7 +163,7 @@ void CribDialog::on_crib_changed(GtkEditable* editable, gpointer data)
 
     const gchar* crib_text = gtk_entry_get_text(GTK_ENTRY(editable));
     int pos = self->crib_.get_position();
-    const char* ct = self->crib_.get_ct();
+    const char* ct = self->crib_.get_original_ct();
     self->crib_ = Crib(ct ? ct : "", crib_text ? crib_text : "");
     self->crib_.place_at(pos);
     self->do_display();
@@ -175,7 +175,7 @@ void CribDialog::on_clear(GtkButton*, gpointer data)
     self->crib_signal_blocked_ = true;
     gtk_entry_set_text(GTK_ENTRY(self->crib_entry_), "");
     self->crib_signal_blocked_ = false;
-    const char* ct = self->crib_.get_ct();
+    const char* ct = self->crib_.get_original_ct();
     self->crib_ = Crib(ct ? ct : "", "");
     self->do_display();
 }
