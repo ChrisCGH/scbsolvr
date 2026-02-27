@@ -1,0 +1,455 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif\r\n"
+    "#include ""res\\scb.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\scb.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 262, 84
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About SCB Cipher Solver"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    CTEXT           " Secret Code Breaker Monoalphabetic Cipher Solver",
+                    IDC_STATIC,41,10,174,8,SS_NOPREFIX
+    CTEXT           "Copyright (C) 2001 Chris Card  All rights reserved.",
+                    IDC_STATIC,41,40,174,8,WS_TABSTOP
+    DEFPUSHBUTTON   "OK",IDOK,223,7,32,14,WS_GROUP
+    CTEXT           "Version 1.02  15 June 2001",IDC_STATIC,41,25,174,8,
+                    SS_NOPREFIX
+END
+
+IDD_SCB_DIALOG DIALOGEX 0, 0, 453, 285
+STYLE DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "Secret Code Breaker Monoalphabetic Substitution Solver"
+MENU IDR_MAINMENU
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "Solve",ID_SOLVE,57,245,50,14
+    PUSHBUTTON      "Quit",IDQUIT,347,245,50,14
+    EDITTEXT        IDC_CIPHER,38,38,378,50,ES_MULTILINE | ES_AUTOVSCROLL | 
+                    WS_VSCROLL
+    EDITTEXT        IDC_PLAIN,38,109,378,50,ES_MULTILINE | ES_AUTOVSCROLL | 
+                    ES_READONLY | WS_VSCROLL
+    LTEXT           "Ciphertext:",IDC_STATIC,38,26,33,9
+    LTEXT           "Plaintext:",IDC_STATIC,38,97,48,9
+    EDITTEXT        IDC_NGRAPH_FILE,81,215,295,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    LTEXT           "NGraph File:",IDC_STATIC,38,215,42,11
+    EDITTEXT        IDC_KEY,56,167,356,23,ES_MULTILINE | ES_READONLY
+    LTEXT           "Number of Keys Checked:",IDC_STATIC,38,198,88,10
+    EDITTEXT        IDC_KEYS_CHECKED,125,196,102,12,ES_AUTOHSCROLL | 
+                    ES_READONLY | ES_NUMBER
+    LTEXT           "Key:",IDC_STATIC,38,169,15,8
+    DEFPUSHBUTTON   "Interrupt",ID_INTERRUPT,115,245,50,14,WS_DISABLED
+    DEFPUSHBUTTON   "Stop",ID_STOP,231,245,50,14,WS_DISABLED
+    DEFPUSHBUTTON   "Resume",ID_RESUME,173,245,50,14,WS_DISABLED
+    LTEXT           "",IDC_CIPHER_FILENAME,75,26,228,9
+    LTEXT           "Index of Coincidence:",IDC_STATIC,312,26,69,9
+    LTEXT           "",IDC_PHI_VALUE,389,26,25,9
+    PUSHBUTTON      "Clear",ID_CLEAR,289,245,50,14
+    LTEXT           "Score:",IDC_STATIC,242,198,24,10
+    LTEXT           "",IDC_SCORE,269,198,54,9
+END
+
+IDD_CRIB_DIALOG DIALOG DISCARDABLE  0, 0, 453, 285
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Cribbing"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,142,260,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,260,260,50,14
+    EDITTEXT        IDC_CRIB_CIPHER,38,38,378,50,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_READONLY | WS_VSCROLL
+    EDITTEXT        IDC_CRIB_CRIB,56,199,180,12,ES_LOWERCASE
+    EDITTEXT        IDC_CRIB_PLAIN,38,109,378,50,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_READONLY | WS_VSCROLL
+    LTEXT           "Ciphertext:",IDC_STATIC,38,26,33,9
+    LTEXT           "Crib:",IDC_STATIC,38,201,13,10
+    LTEXT           "Plaintext:",IDC_STATIC,38,97,48,9
+    DEFPUSHBUTTON   "Clear",ID_CRIB_CLEAR,201,260,50,14
+    EDITTEXT        IDC_CRIB_KEY,57,167,356,23,ES_MULTILINE | ES_READONLY
+    LTEXT           "Key:",IDC_STATIC,39,169,13,10
+    PUSHBUTTON      "<<",IDC_CRIB_NEXT_LEFT,178,231,19,14
+    PUSHBUTTON      ">>",IDC_CRIB_NEXT_RIGHT,255,230,19,14
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "scb MFC Application\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "scb\0"
+            VALUE "LegalCopyright", "Copyright (C) 1901\0"
+            VALUE "OriginalFilename", "scb.EXE\0"
+            VALUE "ProductName", "scb Application\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 255
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 77
+    END
+
+    IDD_SCB_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 446
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 278
+    END
+
+    IDD_CRIB_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 13
+        RIGHTMARGIN, 446
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 278
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINMENU MENU DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&Open...",                    IDM_FILE_OPEN
+        MENUITEM "Set &NGraph File...",         IDM_SET_NGRAPH_FILE
+        MENUITEM "&Save Result",                ID_FILE_SAVE, GRAYED
+        MENUITEM "E&xit",                       ID_FILE_EXIT
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Preserve Original Punctuation", 
+                                                ID_VIEW_OUTPUT_FORMAT_PRESERVE
+        , CHECKED
+        MENUITEM "&Remove Punctuation",         ID_VIEW_REMOVEPUNCTUATION
+    END
+    POPUP "&Tools"
+    BEGIN
+        MENUITEM "&Create NGraph File ...",     ID_TOOLS_CREATENGRAPHFILE
+        MENUITEM "&Fix Key ...",                ID_TOOLS_FIXKEY
+        MENUITEM "C&ribbing ...",               ID_TOOLS_CRIBBING
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About SCB Cipher Solver ...", 
+                                                ID_HELP_ABOUTSECRETCODEBREAKER
+
+        MENUITEM "&Instructions ...",           ID_HELP_INSTRUCTIONS
+        MENUITEM "&Theory ...",                 ID_HELP_THEORY
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABOUTBOX            "&About scb..."
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.K.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENG)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_UK
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_NGRAPH_FILE_DIALOG DIALOG DISCARDABLE  0, 0, 273, 159
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Create Ngraph File"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "Create NGraph File",ID_CREATE_NGRAPH_FILE,100,94,74,14
+    PUSHBUTTON      "Cancel",IDCANCEL,140,116,50,14
+    EDITTEXT        IDC_SAMPLE_FILE,104,24,108,14,ES_AUTOHSCROLL
+    LTEXT           "Sample File:",IDC_STATIC,62,25,40,13
+    EDITTEXT        IDC_NGRAPH_FILE,104,38,108,14,ES_AUTOHSCROLL
+    LTEXT           "NGraph File:",IDC_STATIC,62,39,40,13
+    EDITTEXT        IDC_NGRAPH_LEN,104,52,18,14,ES_NUMBER
+    LTEXT           "NGraph Length:",IDC_STATIC,50,53,52,13
+    PUSHBUTTON      "...",IDC_BROWSE_SAMPLE_FILE,212,25,11,12
+    PUSHBUTTON      "...",IDC_BROWSE_NGRAPH_FILE,212,39,11,12
+    CONTROL         "Progress1",IDC_NGRAPH_PROGRESS,"msctls_progress32",
+                    WS_BORDER,118,76,121,10
+    PUSHBUTTON      "Done",IDDONE,82,116,50,14
+    LTEXT           "Static",IDC_PROGRESS_TEXT,21,76,90,11
+    CONTROL         "Spaces?",IDC_SPACES,"Button",BS_AUTOCHECKBOX | 
+                    BS_LEFTTEXT | BS_NOTIFY | WS_TABSTOP,173,56,44,10
+END
+
+IDD_FIX_KEY_DIALOG DIALOG DISCARDABLE  82, 192, 292, 122
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Fix Key"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,66,83,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,174,83,50,14
+    EDITTEXT        IDC_EDIT1,42,37,8,12,ES_CENTER | ES_UPPERCASE | NOT 
+                    WS_BORDER
+    EDITTEXT        IDC_EDIT2,50,37,8,12,ES_CENTER | ES_UPPERCASE | NOT 
+                    WS_BORDER
+    EDITTEXT        IDC_EDIT3,58,37,8,12,ES_CENTER | ES_UPPERCASE | NOT 
+                    WS_BORDER
+    EDITTEXT        IDC_EDIT4,66,37,8,12,ES_CENTER | ES_UPPERCASE | NOT 
+                    WS_BORDER
+    EDITTEXT        IDC_EDIT5,74,37,8,12,ES_CENTER | ES_UPPERCASE | NOT 
+                    WS_BORDER
+    EDITTEXT        IDC_EDIT6,82,37,8,12,ES_CENTER | ES_UPPERCASE | NOT 
+                    WS_BORDER
+    EDITTEXT        IDC_EDIT7,90,37,8,12,ES_CENTER | ES_UPPERCASE | NOT 
+                    WS_BORDER
+    EDITTEXT        IDC_EDIT8,98,37,8,12,ES_CENTER | ES_UPPERCASE | NOT 
+                    WS_BORDER
+    EDITTEXT        IDC_EDIT9,106,37,8,12,ES_CENTER | ES_UPPERCASE | NOT 
+                    WS_BORDER
+    EDITTEXT        IDC_EDIT10,114,37,8,12,ES_CENTER | ES_UPPERCASE | NOT 
+                    WS_BORDER
+    EDITTEXT        IDC_EDIT11,122,37,8,12,ES_CENTER | ES_UPPERCASE | NOT 
+                    WS_BORDER
+    EDITTEXT        IDC_EDIT12,130,37,8,12,ES_CENTER | ES_UPPERCASE | NOT 
+                    WS_BORDER
+    EDITTEXT        IDC_EDIT13,138,37,8,12,ES_CENTER | ES_UPPERCASE | NOT 
+                    WS_BORDER
+    EDITTEXT        IDC_EDIT14,146,37,8,12,ES_CENTER | ES_UPPERCASE | NOT 
+                    WS_BORDER
+    EDITTEXT        IDC_EDIT15,154,37,8,12,ES_CENTER | ES_UPPERCASE | NOT 
+                    WS_BORDER
+    EDITTEXT        IDC_EDIT16,162,37,8,12,ES_CENTER | ES_UPPERCASE | NOT 
+                    WS_BORDER
+    EDITTEXT        IDC_EDIT17,170,37,8,12,ES_CENTER | ES_UPPERCASE | NOT 
+                    WS_BORDER
+    EDITTEXT        IDC_EDIT18,178,37,8,12,ES_CENTER | ES_UPPERCASE | NOT 
+                    WS_BORDER
+    EDITTEXT        IDC_EDIT19,186,37,8,12,ES_CENTER | ES_UPPERCASE | NOT 
+                    WS_BORDER
+    EDITTEXT        IDC_EDIT20,194,37,8,12,ES_CENTER | ES_UPPERCASE | NOT 
+                    WS_BORDER
+    EDITTEXT        IDC_EDIT21,202,37,8,12,ES_CENTER | ES_UPPERCASE | NOT 
+                    WS_BORDER
+    EDITTEXT        IDC_EDIT22,210,37,8,12,ES_CENTER | ES_UPPERCASE | NOT 
+                    WS_BORDER
+    EDITTEXT        IDC_EDIT23,218,37,8,12,ES_CENTER | ES_UPPERCASE | NOT 
+                    WS_BORDER
+    EDITTEXT        IDC_EDIT24,226,37,8,12,ES_CENTER | ES_UPPERCASE | NOT 
+                    WS_BORDER
+    EDITTEXT        IDC_EDIT25,234,37,8,12,ES_CENTER | ES_UPPERCASE | NOT 
+                    WS_BORDER
+    EDITTEXT        IDC_EDIT26,242,37,8,12,ES_CENTER | ES_UPPERCASE | NOT 
+                    WS_BORDER
+    CTEXT           "a",IDC_STATIC1,41,50,8,12
+    CTEXT           "b",IDC_STATIC2,49,50,8,12
+    CTEXT           "c",IDC_STATIC3,57,50,8,12
+    CTEXT           "d",IDC_STATIC4,65,50,8,12
+    CTEXT           "e",IDC_STATIC5,73,50,8,12
+    CTEXT           "f",IDC_STATIC6,81,50,8,12
+    CTEXT           "g",IDC_STATIC7,89,50,8,12
+    CTEXT           "h",IDC_STATIC8,97,50,8,12
+    CTEXT           "i",IDC_STATIC9,105,50,8,12
+    CTEXT           "j",IDC_STATIC10,113,50,8,12
+    CTEXT           "k",IDC_STATIC11,121,50,8,12
+    CTEXT           "l",IDC_STATIC12,129,50,8,12
+    CTEXT           "m",IDC_STATIC13,137,50,8,12
+    CTEXT           "n",IDC_STATIC14,145,50,8,12
+    CTEXT           "o",IDC_STATIC15,153,50,8,12
+    CTEXT           "p",IDC_STATIC16,161,50,8,12
+    CTEXT           "q",IDC_STATIC17,169,50,8,12
+    CTEXT           "r",IDC_STATIC18,177,50,8,12
+    CTEXT           "s",IDC_STATIC19,185,50,8,12
+    CTEXT           "t",IDC_STATIC20,193,50,8,12
+    CTEXT           "u",IDC_STATIC21,201,50,8,12
+    CTEXT           "v",IDC_STATIC22,209,50,8,12
+    CTEXT           "w",IDC_STATIC23,217,50,8,12
+    CTEXT           "x",IDC_STATIC24,225,50,8,12
+    CTEXT           "y",IDC_STATIC25,233,50,8,12
+    CTEXT           "z",IDC_STATIC26,241,50,8,12
+    GROUPBOX        "",IDC_STATIC,31,23,229,43
+    DEFPUSHBUTTON   "Clear",ID_CLEAR,120,83,50,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_NGRAPH_FILE_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 266
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 152
+    END
+
+    IDD_FIX_KEY_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 6
+        RIGHTMARGIN, 285
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 115
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (U.K.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif
+#include "res\scb.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
