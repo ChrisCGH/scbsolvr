@@ -39,5 +39,31 @@ scbsolvr: main_gtk.o MainWindow.o NgraphDialog.o FixKeyDialog.o CribDialog.o \
 	    FixKeyDialog.o CribDialog.o hash.o scorer.o \
 	    $(GTK_LIBS) -lpthread
 
+TESTS=tests/test_hash tests/test_mono tests/test_fixed tests/test_crib \
+      tests/test_mono_solver
+
+tests/test_hash: tests/test_hash.cxx hash.o tests/test.h
+	$(CXX) -g $(OPT) -I. -o $@ tests/test_hash.cxx hash.o
+
+tests/test_mono: tests/test_mono.cxx tests/test.h
+	$(CXX) -g $(OPT) -I. -o $@ tests/test_mono.cxx
+
+tests/test_fixed: tests/test_fixed.cxx tests/test.h
+	$(CXX) -g $(OPT) -I. -o $@ tests/test_fixed.cxx
+
+tests/test_crib: tests/test_crib.cxx tests/test.h
+	$(CXX) -g $(OPT) -I. -o $@ tests/test_crib.cxx
+
+tests/test_mono_solver: tests/test_mono_solver.cxx hash.o tests/test.h \
+                        mono_solver.h
+	$(CXX) -g $(OPT) -I. -o $@ tests/test_mono_solver.cxx hash.o
+
+test: $(TESTS)
+	@for t in $(TESTS); do \
+		echo "Running $$t ..."; \
+		./$$t || exit 1; \
+	done
+	@echo "All tests passed!"
+
 clean:
-	rm -f *.o mono scbsolvr
+	rm -f *.o mono scbsolvr $(TESTS)

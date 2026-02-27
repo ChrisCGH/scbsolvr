@@ -362,7 +362,7 @@ class Mono_Solver
             }
             c++;
          }
-         if (total == 0) return 0.0;
+         if (total <= 1) return 0.0;
          double phi_value = 0.0;
          for (i = 0; i < 26; i++)
          {

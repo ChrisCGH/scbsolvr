@@ -2,3 +2,8 @@
 newsrc/*.o
 newsrc/mono
 newsrc/scbsolvr
+newsrc/tests/test_hash
+newsrc/tests/test_mono
+newsrc/tests/test_fixed
+newsrc/tests/test_crib
+newsrc/tests/test_mono_solver
